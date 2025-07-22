@@ -18,5 +18,47 @@ Este es un proyecto interactivo desarrollado con **HTML**, **CSS** y **JavaScrip
 
 ---
 
-## 📁 Estructura de Archivos
+
+---
+
+## 🛠️ Tecnologías Usadas
+
+- **HTML5** - estructura del proyecto
+- **CSS3** - estilos, animaciones y máscara SVG
+- **JavaScript Vanilla** - navegación y control dinámico de animaciones
+
+---
+
+## 🧠 Cómo funciona
+
+- Se define una variable CSS `--position` que controla la posición actual (0 = Pera, 1 = Manzana, 2 = Exótica).
+- Los botones modifican `--position`, lo que desplaza la sección y actualiza el fondo.
+- El `mask` de CSS en `.sabor` aplica una máscara SVG sobre la imagen del sabor.
+- Al cambiar de sección, el título (`<h2>`) vuelve a animarse desde arriba mediante una reinicialización forzada (`heading.offsetWidth`).
+
+---
+
+## ✅ Requisitos para correr el proyecto
+
+Solo necesitas un navegador moderno. Si usas rutas locales (`./`), asegúrate de correr el proyecto desde un servidor local (por ejemplo, con **Live Server** en VS Code), para evitar errores de carga de imágenes o scripts.
+
+---
+
+## 💡 Mejora futura
+
+- Agregar una barra de navegación inferior con íconos
+- Incluir más sabores de soda
+- Añadir sonido o efectos al cambiar de sabor
+- Optimizar para dispositivos móviles
+
+---
+
+## 👨‍💻 Autor
+
+**Jesús Franco**  
+Diseño, lógica y animaciones implementadas manualmente.
+
+---
+
+
 
