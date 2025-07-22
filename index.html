@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sodas</title>
+</head>
+<body>
+    <button id="btnIzq"></button>
+    <div class="soda">
+        <img src="./public/soda.svg" alt="lata" class="lata">
+        <img src="./public/Imagen de WhatsApp 2025-07-07 a las 18.22.05_eb3fb771.jpg" alt="sabor" class="sabor">
+    </div>
+    <button id="btnDer"></button>
+
+    <section>
+        <article class="pear">
+            <h2>Pear</h2>
+            <img src="./img/pear/one.png" alt="pera 1" class="pera1">
+            <img src="./img/pear/two.png" alt="pera 2" class="pera2">
+            <img src="./img/pear/three.png" alt="pera 3" class="pera3">
+            <img src="./img/pear/four.png" alt="pera 4" class="pera4">
+        </article>
+        <article class="apple">
+            <h2>Apple</h2>
+            <img src="./img/apple/one.png"  alt="apple 1" class="apple1">
+            <img src="./img/apple/two.png"  alt="apple 2" class="apple2">
+            <img src="./img/apple/three.png"  alt="apple 3" class="apple3">
+            <img src="./img/apple/four.png"  alt="apple 4" class="apple4">
+        </article>
+        <article class="exotic">
+            <h2>Exotic</h2>
+            <img src="./img/exotic/one.png"  alt="exotic 1" class="exotic1">
+            <img src="./img/exotic/two.png"  alt="exotic 2" class="exotic2">
+            <img src="./img/exotic/three.png"  alt="exotic 3" class="exotic3">
+            <img src="./img/exotic/four.png"  alt="exotic 4" class="exotic4">
+        </article>
+    </section>
+
+</body>
+<style>
+    body{
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        --position: 0;
+        background-color: #bed6b7;
+    }
+
+    .soda {
+        width: 275px;
+        display: grid;
+    }
+
+    .soda > *{
+        width: 275px;
+        height: 100%;
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .soda .sabor{
+        mask: url(./public/soda.svg);
+        object-fit: cover;
+        mask-size: cover;
+        mix-blend-mode: multiply;
+        object-position: calc(-275px * var(--position)) 0px;
+        transition: object-position 0.7s;
+        z-index: 1;
+    }
+    
+    section{
+        display: flex;
+        position: fixed;
+        z-index: -1;
+        left: calc(-100vw * var(--position));
+    }
+
+    section > *{
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .pear{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-color: #bed6b7;
+    }
+    .apple{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-color: #ed6558;
+    }
+
+    .exotic{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-color: #938eed;
+        
+    }
+    
+
+    h2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20rem;
+        animation: Begin 1s ease-in-out;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        color: white;
+        mix-blend-mode: overlay;
+        opacity: 0.5;
+        position: absolute;
+        z-index: 15;
+    }
+
+    #btnIzq, #btnDer{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: white;
+        cursor: pointer;
+        color: white;
+        opacity: 0.6;
+        border: none;
+        z-index: 2000;
+    }
+
+    #btnIzq {
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #btnDer {
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @keyframes Begin {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    /*Pear*/
+    .pera1{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        z-index: 10;
+        top: 35%;
+        left: 60px;
+        rotate: 20deg;
+    }
+
+    .pera2{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        z-index: 10;
+        top: 30%;
+        left: 400px;
+        rotate: -10deg;
+    }
+
+    .pera3{
+        width: 200px;
+        height: 150px;
+        position: absolute;
+        z-index: 10;
+        top: 30%;
+        left: 850px;
+        rotate: 10deg;
+    }
+
+    .pera4{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        z-index: 10;
+        top: 30%;
+        left: 1250px;
+        rotate: 10deg;
+    }
+
+    .pear img {
+        animation: rotate 5s infinite ease-in-out ;
+    }
+
+
+    @keyframes rotate{
+        0% {
+            transform: translateY(0px) rotate(10deg);
+        }
+
+        50% {
+            transform: translateY(-10px) scale(0.95);
+        }
+
+        100% {
+            transform: translateY(0px) rotate(10deg);
+        }
+    }
+
+    /*Apple*/
+
+    .apple1{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        z-index: 10;
+        top: 35%;
+        left: 60px;
+        rotate: 20deg;
+    }
+
+    .apple2{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        z-index: 10;
+        top: 30%;
+        left: 400px;
+        rotate: -10deg;
+    }
+
+    .apple3{
+        width: 200px;
+        height: 150px;
+        position: absolute;
+        z-index: 10;
+        top: 30%;
+        left: 850px;
+        rotate: 10deg;
+    }
+
+    .apple4{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        z-index: 10;
+        top: 30%;
+        left: 1250px;
+        rotate: 10deg;
+    }
+
+    .apple img {
+        animation: rotate 5s infinite ease-in-out ;
+    }    
+
+    /* Exotic */
+    
+    .exotic1{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        z-index: 10;
+        top: 35%;
+        left: 60px;
+        rotate: 20deg;
+    }
+
+    .exotic2{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        z-index: 10;
+        top: 30%;
+        left: 400px;
+        rotate: -10deg;
+    }
+
+    .exotic3{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        z-index: 10;
+        top: 30%;
+        left: 850px;
+        rotate: 10deg;
+    }
+
+    .exotic4{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        z-index: 10;
+        top: 30%;
+        left: 1250px;
+        rotate: -50deg;
+    }
+
+    .exotic img {
+            animation: rotate 5s infinite ease-in-out;
+    }    
+     
+</style>
+<script src="./src/main.js"></script>
+</html>
